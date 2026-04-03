@@ -76,7 +76,8 @@ class InteractionsResource(SyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         stream: Literal[False] | Omit = omit,
         system_instruction: str | Omit = omit,
@@ -102,12 +103,14 @@ class InteractionsResource(SyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -140,7 +143,8 @@ class InteractionsResource(SyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         system_instruction: str | Omit = omit,
         tools: Iterable[ToolParam] | Omit = omit,
@@ -167,12 +171,14 @@ class InteractionsResource(SyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -202,7 +208,8 @@ class InteractionsResource(SyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         stream: Literal[False] | Omit = omit,
         system_instruction: str | Omit = omit,
@@ -228,12 +235,14 @@ class InteractionsResource(SyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -266,7 +275,8 @@ class InteractionsResource(SyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         system_instruction: str | Omit = omit,
         tools: Iterable[ToolParam] | Omit = omit,
@@ -293,12 +303,14 @@ class InteractionsResource(SyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -329,7 +341,8 @@ class InteractionsResource(SyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         system_instruction: str | Omit = omit,
         tools: Iterable[ToolParam] | Omit = omit,
@@ -356,12 +369,14 @@ class InteractionsResource(SyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -391,7 +406,8 @@ class InteractionsResource(SyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         stream: Literal[False] | Literal[True] | Omit = omit,
         system_instruction: str | Omit = omit,
@@ -425,6 +441,7 @@ class InteractionsResource(SyncAPIResource):
                     "response_format": response_format,
                     "response_mime_type": response_mime_type,
                     "response_modalities": response_modalities,
+                    "service_tier": service_tier,
                     "store": store,
                     "stream": stream,
                     "system_instruction": system_instruction,
@@ -496,7 +513,8 @@ class InteractionsResource(SyncAPIResource):
     ) -> Interaction:
         """Cancels an interaction by id.
 
-        This only applies to background interactions that are still running.
+        This only applies to background interactions that
+        are still running.
 
         Args:
           extra_headers: Send extra headers
@@ -538,12 +556,14 @@ class InteractionsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Interaction:
         """
-        Retrieves the full details of a single interaction based on its `Interaction.id`.
+        Retrieves the full details of a single interaction based on its
+        `Interaction.id`.
 
         Args:
           include_input: If set to true, includes the input in the response.
 
-          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the event marked by the event id. Can only be used if `stream` is true.
+          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the
+              event marked by the event id. Can only be used if `stream` is true.
 
           stream: If set to true, the generated content will be streamed incrementally.
 
@@ -574,14 +594,16 @@ class InteractionsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Stream[InteractionSSEEvent]:
         """
-        Retrieves the full details of a single interaction based on its `Interaction.id`.
+        Retrieves the full details of a single interaction based on its
+        `Interaction.id`.
 
         Args:
           stream: If set to true, the generated content will be streamed incrementally.
 
           include_input: If set to true, includes the input in the response.
 
-          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the event marked by the event id. Can only be used if `stream` is true.
+          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the
+              event marked by the event id. Can only be used if `stream` is true.
 
           extra_headers: Send extra headers
 
@@ -610,14 +632,16 @@ class InteractionsResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Interaction | Stream[InteractionSSEEvent]:
         """
-        Retrieves the full details of a single interaction based on its `Interaction.id`.
+        Retrieves the full details of a single interaction based on its
+        `Interaction.id`.
 
         Args:
           stream: If set to true, the generated content will be streamed incrementally.
 
           include_input: If set to true, includes the input in the response.
 
-          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the event marked by the event id. Can only be used if `stream` is true.
+          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the
+              event marked by the event id. Can only be used if `stream` is true.
 
           extra_headers: Send extra headers
 
@@ -704,7 +728,8 @@ class AsyncInteractionsResource(AsyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         stream: Literal[False] | Omit = omit,
         system_instruction: str | Omit = omit,
@@ -730,12 +755,14 @@ class AsyncInteractionsResource(AsyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -768,7 +795,8 @@ class AsyncInteractionsResource(AsyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         system_instruction: str | Omit = omit,
         tools: Iterable[ToolParam] | Omit = omit,
@@ -795,12 +823,14 @@ class AsyncInteractionsResource(AsyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -830,7 +860,8 @@ class AsyncInteractionsResource(AsyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         stream: Literal[False] | Omit = omit,
         system_instruction: str | Omit = omit,
@@ -856,12 +887,14 @@ class AsyncInteractionsResource(AsyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -894,7 +927,8 @@ class AsyncInteractionsResource(AsyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         system_instruction: str | Omit = omit,
         tools: Iterable[ToolParam] | Omit = omit,
@@ -921,12 +955,14 @@ class AsyncInteractionsResource(AsyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -957,7 +993,8 @@ class AsyncInteractionsResource(AsyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         system_instruction: str | Omit = omit,
         tools: Iterable[ToolParam] | Omit = omit,
@@ -984,12 +1021,14 @@ class AsyncInteractionsResource(AsyncAPIResource):
 
           previous_interaction_id: The ID of the previous interaction, if any.
 
-          response_format: Enforces that the generated response is a JSON object that complies with
-              the JSON schema specified in this field.
+          response_format: Enforces that the generated response is a JSON object that complies with the
+              JSON schema specified in this field.
 
           response_mime_type: The mime type of the response. This is required if response_format is set.
 
           response_modalities: The requested modalities of the response (TEXT, IMAGE, AUDIO).
+
+          service_tier: The service tier for the interaction.
 
           store: Input only. Whether to store the response and request for later retrieval.
 
@@ -1019,7 +1058,8 @@ class AsyncInteractionsResource(AsyncAPIResource):
         previous_interaction_id: str | Omit = omit,
         response_format: object | Omit = omit,
         response_mime_type: str | Omit = omit,
-        response_modalities: List[Literal["text", "image", "audio"]] | Omit = omit,
+        response_modalities: List[Literal["text", "image", "audio", "video", "document"]] | Omit = omit,
+        service_tier: Literal["flex", "standard", "priority"] | Omit = omit,
         store: bool | Omit = omit,
         stream: Literal[False] | Literal[True] | Omit = omit,
         system_instruction: str | Omit = omit,
@@ -1053,6 +1093,7 @@ class AsyncInteractionsResource(AsyncAPIResource):
                     "response_format": response_format,
                     "response_mime_type": response_mime_type,
                     "response_modalities": response_modalities,
+                    "service_tier": service_tier,
                     "store": store,
                     "stream": stream,
                     "system_instruction": system_instruction,
@@ -1124,7 +1165,8 @@ class AsyncInteractionsResource(AsyncAPIResource):
     ) -> Interaction:
         """Cancels an interaction by id.
 
-        This only applies to background interactions that are still running.
+        This only applies to background interactions that
+        are still running.
 
         Args:
           extra_headers: Send extra headers
@@ -1166,12 +1208,14 @@ class AsyncInteractionsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Interaction:
         """
-        Retrieves the full details of a single interaction based on its `Interaction.id`.
+        Retrieves the full details of a single interaction based on its
+        `Interaction.id`.
 
         Args:
           include_input: If set to true, includes the input in the response.
 
-          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the event marked by the event id. Can only be used if `stream` is true.
+          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the
+              event marked by the event id. Can only be used if `stream` is true.
 
           stream: If set to true, the generated content will be streamed incrementally.
 
@@ -1202,14 +1246,16 @@ class AsyncInteractionsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> AsyncStream[InteractionSSEEvent]:
         """
-        Retrieves the full details of a single interaction based on its `Interaction.id`.
+        Retrieves the full details of a single interaction based on its
+        `Interaction.id`.
 
         Args:
           stream: If set to true, the generated content will be streamed incrementally.
 
           include_input: If set to true, includes the input in the response.
 
-          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the event marked by the event id. Can only be used if `stream` is true.
+          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the
+              event marked by the event id. Can only be used if `stream` is true.
 
           extra_headers: Send extra headers
 
@@ -1238,14 +1284,16 @@ class AsyncInteractionsResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Interaction | AsyncStream[InteractionSSEEvent]:
         """
-        Retrieves the full details of a single interaction based on its `Interaction.id`.
+        Retrieves the full details of a single interaction based on its
+        `Interaction.id`.
 
         Args:
           stream: If set to true, the generated content will be streamed incrementally.
 
           include_input: If set to true, includes the input in the response.
 
-          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the event marked by the event id. Can only be used if `stream` is true.
+          last_event_id: Optional. If set, resumes the interaction stream from the next chunk after the
+              event marked by the event id. Can only be used if `stream` is true.
 
           extra_headers: Send extra headers
 

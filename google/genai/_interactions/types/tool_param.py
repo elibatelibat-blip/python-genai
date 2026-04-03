@@ -27,23 +27,14 @@ from .allowed_tools_param import AllowedToolsParam
 
 __all__ = [
     "ToolParam",
-    "GoogleSearch",
     "CodeExecution",
     "URLContext",
     "ComputerUse",
     "MCPServer",
+    "GoogleSearch",
     "FileSearch",
     "GoogleMaps",
 ]
-
-
-class GoogleSearch(TypedDict, total=False):
-    """A tool that can be used by the model to search Google."""
-
-    type: Required[Literal["google_search"]]
-
-    search_types: List[Literal["web_search", "image_search"]]
-    """The types of search grounding to enable."""
 
 
 class CodeExecution(TypedDict, total=False):
@@ -85,10 +76,16 @@ class MCPServer(TypedDict, total=False):
     """The name of the MCPServer."""
 
     url: str
-    """
-    The full URL for the MCPServer endpoint.
-    Example: "https://api.example.com/mcp"
-    """
+    """The full URL for the MCPServer endpoint. Example: "https://api.example.com/mcp" """
+
+
+class GoogleSearch(TypedDict, total=False):
+    """A tool that can be used by the model to search Google."""
+
+    type: Required[Literal["google_search"]]
+
+    search_types: List[Literal["web_search", "image_search"]]
+    """The types of search grounding to enable."""
 
 
 class FileSearch(TypedDict, total=False):
@@ -109,6 +106,8 @@ class FileSearch(TypedDict, total=False):
 class GoogleMaps(TypedDict, total=False):
     """A tool that can be used by the model to call Google Maps."""
 
+    type: Required[Literal["google_maps"]]
+
     enable_widget: bool
     """
     Whether to return a widget context token in the tool call result of the
@@ -121,9 +120,7 @@ class GoogleMaps(TypedDict, total=False):
     longitude: float
     """The longitude of the user's location."""
 
-    type: Literal["google_maps"]
-
 
 ToolParam: TypeAlias = Union[
-    FunctionParam, GoogleSearch, CodeExecution, URLContext, ComputerUse, MCPServer, FileSearch, GoogleMaps
+    FunctionParam, CodeExecution, URLContext, ComputerUse, MCPServer, GoogleSearch, FileSearch, GoogleMaps
 ]

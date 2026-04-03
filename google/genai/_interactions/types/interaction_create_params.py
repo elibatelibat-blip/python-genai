@@ -80,15 +80,18 @@ class BaseCreateModelInteractionParams(TypedDict, total=False):
 
     response_format: object
     """
-    Enforces that the generated response is a JSON object that complies with
-    the JSON schema specified in this field.
+    Enforces that the generated response is a JSON object that complies with the
+    JSON schema specified in this field.
     """
 
     response_mime_type: str
     """The mime type of the response. This is required if response_format is set."""
 
-    response_modalities: List[Literal["text", "image", "audio"]]
+    response_modalities: List[Literal["text", "image", "audio", "video", "document"]]
     """The requested modalities of the response (TEXT, IMAGE, AUDIO)."""
+
+    service_tier: Literal["flex", "standard", "priority"]
+    """The service tier for the interaction."""
 
     store: bool
     """Input only. Whether to store the response and request for later retrieval."""
@@ -111,18 +114,18 @@ Input: TypeAlias = Union[
     VideoContentParam,
     ThoughtContentParam,
     FunctionCallContentParam,
-    FunctionResultContentParam,
     CodeExecutionCallContentParam,
-    CodeExecutionResultContentParam,
     URLContextCallContentParam,
-    URLContextResultContentParam,
-    GoogleSearchCallContentParam,
-    GoogleSearchResultContentParam,
     MCPServerToolCallContentParam,
-    MCPServerToolResultContentParam,
+    GoogleSearchCallContentParam,
     FileSearchCallContentParam,
-    FileSearchResultContentParam,
     GoogleMapsCallContentParam,
+    FunctionResultContentParam,
+    CodeExecutionResultContentParam,
+    URLContextResultContentParam,
+    GoogleSearchResultContentParam,
+    MCPServerToolResultContentParam,
+    FileSearchResultContentParam,
     GoogleMapsResultContentParam,
 ]
 
@@ -147,15 +150,18 @@ class BaseCreateAgentInteractionParams(TypedDict, total=False):
 
     response_format: object
     """
-    Enforces that the generated response is a JSON object that complies with
-    the JSON schema specified in this field.
+    Enforces that the generated response is a JSON object that complies with the
+    JSON schema specified in this field.
     """
 
     response_mime_type: str
     """The mime type of the response. This is required if response_format is set."""
 
-    response_modalities: List[Literal["text", "image", "audio"]]
+    response_modalities: List[Literal["text", "image", "audio", "video", "document"]]
     """The requested modalities of the response (TEXT, IMAGE, AUDIO)."""
+
+    service_tier: Literal["flex", "standard", "priority"]
+    """The service tier for the interaction."""
 
     store: bool
     """Input only. Whether to store the response and request for later retrieval."""
